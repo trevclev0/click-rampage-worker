@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "Placeholder for pre-commit hook..."
+yarn test:run
