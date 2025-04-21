@@ -1,3 +1,4 @@
 {
-  "path": "cz-emoji-conventional"
+  "path": "cz-emoji-conventional",
+  "useGitmojis": true
 }
