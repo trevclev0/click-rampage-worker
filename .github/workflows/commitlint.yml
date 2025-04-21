@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   commitlint:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,13 +16,6 @@ jobs:
         with:
           node-version: "22.x"
           cache: "yarn"
-      - name: Print versions
-        run: |
-          git --version
-          node --version
-          npm --version
-          npx commitlint --version
-          yarn --version
       - name: Install commitlint configuration
         run: |
           yarn add -D commitlint-config-gitmoji
