@@ -1,0 +1,25 @@
+name: Vitest
+
+on: [push, pull_request]
+
+jobs:
+  vitest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: "yarn"
+      - name: Install dependencies
+        run: |
+          yarn install
+
+      - name: Run Unit Tests
+        run: |
+          yarn test:run
